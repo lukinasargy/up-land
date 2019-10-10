@@ -49,9 +49,9 @@ $(function () {
 			}
 
 		});
-$(window).on("resize", function (event) {
-	document.location.reload(true);
-});
+//$(window).on("resize", function (event) {
+//	document.location.reload(true);
+//});
 
 
 	});
