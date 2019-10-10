@@ -631,17 +631,21 @@ DEFAULT CSS END
 			cursor: pointer;
 			color: $color-two;
 		}
-
+		&:before {
+				transition: all 0.3s;
+			left: 0;
+				content: '';
+				position: absolute;
+				bottom: -1px;
+				width: 0%;
+				height: 3px;
+				background-color: transparent;
+			}
 		&.active {
 			color: $color-two;
 
 			&:before {
-
-				content: '';
-				position: absolute;
-				bottom: -1px;
 				width: 100%;
-				height: 3px;
 				background-color: $color-two;
 			}
 		}
