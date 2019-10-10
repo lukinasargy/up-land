@@ -28,30 +28,44 @@ $(function () {
 
 
 	$(document).ready(function () {
+						if (window.matchMedia("(max-width: 1200px)").matches) {
+							$('.choose__item').removeClass('active');
+						}
 
-		$(".trade__link,.choose__item").on("click", function (event) {
+		$(".choose__text").on("click", function (event) {
 
-			if (!$(this).hasClass("active")) {
+			if (!$(this).parent().hasClass("active") ) {
 				$('.choose').addClass('active');
 				event.preventDefault();
-				$("[hash~='" + $(this).attr("hash") + "']").addClass("active").siblings().removeClass("active");
+				$("[hash~='" + $(this).parent().attr("hash") + "']").addClass("active").siblings().removeClass("active");
 
 				if (window.matchMedia("(max-width: 1200px)").matches) {
-					$('.trade__tab').hide();;
-					$($(this).attr("hash")).appendTo($(this)).slideDown(300);
+					$('.trade__tab').hide();
+					$($(this).parent().attr("hash")).appendTo($(this).parent()).slideDown(300);
 				} else {
-					$($(this).attr("hash")).fadeIn(300).siblings().hide();
+					$($(this).parent().attr("hash")).fadeIn(300).siblings().hide();
 				};
 			} else {
-				$(this).removeClass('active');
+				$(this).parent().removeClass('active');
 				$('.choose').removeClass('active');
-				$($(this).attr("hash")).removeClass("active").hide();
+				$($(this).parent().attr("hash")).removeClass("active").hide();
 			}
 
 		});
-//$(window).on("resize", function (event) {
-//	document.location.reload(true);
-//});
+		$(".trade__link").on("click", function (event) {
+			if (!$(this).hasClass("active") ) {
+				event.preventDefault();
+				$("[hash~='" + $(this).attr("hash") + "']").addClass("active").siblings().removeClass("active");
+					$($(this).attr("hash")).fadeIn(300).siblings().hide();
+				
+			} else {
+				$(this).removeClass('active');
+				$($(this).attr("hash")).removeClass("active").hide();
+			}
+		});
+		$(window).on("resize", function (event) {
+			document.location.reload(true);
+		});
 
 
 	});
