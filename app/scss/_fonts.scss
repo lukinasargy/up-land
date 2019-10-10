@@ -1,0 +1,11 @@
+@import "_mixins/font-face";
+
+//@include font-face("roboto-example", "../fonts/RobotoRegular/RobotoRegular");
+//@include font-face("roboto-example", "../fonts/RobotoBold/RobotoBold", bold);
+//@import  url('https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700');
+//@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&display=swap');
+@include font-face("pfdintextpro", "../fonts/pfdintextpro-light/pfdintextpro-light-webfont", 300);
+@include font-face("pfdintextpro", "../fonts/pfdintextpro-medium/pfdintextpro-medium-webfont", 500);
+@include font-face("pfdintextpro", "../fonts/pfdintextpro-regular/pfdintextpro-regular-webfont", 400);
+
+
